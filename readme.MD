@@ -1,19 +1,21 @@
 # Netmiko Demo
 
+I created a container that has all the necessary dependancies for this demo:
 ```
 docker pull jshively/ubuntu-network-dev:latest
 ```
 
 Clone down the repo:
 ```
-git clone
+git clone https://github.com/jshively37/netmiko-presentation.git
 ```
 
+Change into the directory:
 ```
 cd netmiko-presentation
 ```
 
-To run:
+Run the container:
 ```
 docker run -it -p 8888:8888 -v $PWD:/development jshively/ubuntu-network-dev:latest
 ```
