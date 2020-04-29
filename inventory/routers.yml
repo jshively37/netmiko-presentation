@@ -1,0 +1,8 @@
+csr1:
+  host: 10.246.32.203
+  port: 1222
+  device_type: cisco_ios
+csr3:
+  host: 10.246.32.203
+  port: 3222
+  device_type: cisco_ios
