@@ -1,8 +1,64 @@
-csr1:
-  host: 10.246.32.203
-  port: 1222
+# csr1:
+#   host: 10.246.32.203
+#   port: 1222
+#   device_type: cisco_ios
+#   eigrp:
+#     as: 1
+#     advertised_networks:
+#       - network: 1.1.1.1
+#         prefix: 0.0.0.0
+#       - network: 192.168.100.0
+#         prefix: 0.0.0.255
+#   interfaces:
+#     - name: loopback1
+#       address: 1.1.1.1
+#       netmask: 255.255.255.255
+#       enabled: true
+
+# csr3:
+#   host: 10.246.32.203
+#   port: 3222
+#   device_type: cisco_ios
+#   eigrp:
+#     as: 1
+#     advertised_networks:
+#       - network: 3.3.3.3
+#         prefix: 0.0.0.0
+#       - network: 192.168.100.0
+#         prefix: 0.0.0.255
+#   interfaces:
+#     - name: loopback3
+#       address: 3.3.3.3
+#       netmask: 255.255.255.255
+#       enabled: true
+
+
+r1:
+  host: 192.168.2.161
   device_type: cisco_ios
-csr3:
-  host: 10.246.32.203
-  port: 3222
+  eigrp:
+    as: 1
+    advertised_networks:
+      - network: 1.1.1.1
+        prefix: 0.0.0.0
+      - network: 172.31.12.0
+        prefix: 0.0.0.255
+  loopback:
+    interface: 1
+    ip_address: 1.1.1.1
+    netmask: 255.255.255.255
+
+r2:
+  host: 192.168.2.162
   device_type: cisco_ios
+  eigrp:
+    as: 1
+    advertised_networks:
+      - network: 2.2.2.2
+        prefix: 0.0.0.0
+      - network: 172.31.12.0
+        prefix: 0.0.0.255
+  loopback:
+    interface: 1
+    ip_address: 2.2.2.2
+    netmask: 255.255.255.255

@@ -1,0 +1,7 @@
+router eigrp {{ eigrp.as }}
+{% for eigrp_network in eigrp.advertised_networks -%}
+network {{ eigrp_network.network }} {{ eigrp_network.prefix }}
+{% endfor -%}
+{% if router_id is defined -%}
+router-id {{ router_id }}
+{% endif -%}
