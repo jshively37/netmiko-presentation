@@ -3,5 +3,5 @@ router eigrp {{ eigrp.as }}
 network {{ eigrp_network.network }} {{ eigrp_network.prefix }}
 {% endfor -%}
 {% if router_id is defined -%}
-router-id {{ router_id }}
+router-id {{ eigrp.router_id }}
 {% endif -%}
