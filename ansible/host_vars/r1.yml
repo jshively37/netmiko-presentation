@@ -1,0 +1,5 @@
+---
+ansible_host: "192.168.2.161"
+ansible_port: 22
+netconf_port: 1830
+restconf_port: 1443

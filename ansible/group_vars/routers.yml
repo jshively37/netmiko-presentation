@@ -1,0 +1,3 @@
+---
+ansible_collection: "network_cli"
+ansible_network_os: "ios"

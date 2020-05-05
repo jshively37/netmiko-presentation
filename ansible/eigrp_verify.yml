@@ -1,0 +1,34 @@
+---
+- name: Verify EIGRP Lab
+  hosts: csr1
+  connection: network_cli
+  gather_facts: no
+  tasks:
+  - name: Gather Interface Information
+    ios_facts:
+      gather_subset: "!min"
+      gather_network_resources: interfaces
+    register: interface_information
+
+  - name: Display Interface Information
+    debug: msg="{{ interface_information.ansible_facts.ansible_net_interfaces }}"
+
+  - name: Get EIGRP Information
+    ios_command:
+      commands:
+        - "show ip eigrp neighbors"
+        - "show ip route eigrp"
+    register: eigrp_information
+
+  - name: Print Output
+    debug: msg="{{ eigrp_information.stdout_lines }}"
+
+  - name: Ping Other Router
+    ios_command:
+      commands:
+        - "ping 3.3.3.3 repeat 3"
+    register: ping_results
+
+  - name: Display Ping Results
+    debug:
+      var: ping_results.stdout_lines
