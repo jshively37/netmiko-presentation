@@ -6,7 +6,7 @@
   tasks:
   - name: Gather Interface Information
     ios_facts:
-      gather_network_resources: interfaces
+      # gather_network_resources: interfaces
 
   - name: Display Interface Information
     debug: msg="{{ ansible_net_interfaces }}"
