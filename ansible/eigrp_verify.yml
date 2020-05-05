@@ -6,7 +6,6 @@
   tasks:
   - name: Gather Interface Information
     ios_facts:
-      gather_subset: "!config"
 
   - name: Display Interface Information
     debug: msg="{{ ansible_net_interfaces }}"
