@@ -1,6 +1,6 @@
 ---
 - name: Configure EIGRP Lab
-  hosts: csr1
+  hosts: r1
   connection: network_cli
   gather_facts: no
   tasks:
