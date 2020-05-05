@@ -8,10 +8,10 @@
     ios_facts:
       gather_subset: "!min"
       gather_network_resources: interfaces
-    register: interface_information
+    # register: interface_information
 
   - name: Display Interface Information
-    debug: msg="{{ interface_information.ansible_facts.ansible_net_interfaces }}"
+    debug: msg="{{ ansible_net_interfaces }}"
 
   - name: Get EIGRP Information
     ios_command:
