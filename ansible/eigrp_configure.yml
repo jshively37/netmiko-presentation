@@ -17,6 +17,6 @@
     ios_config:
       lines:
         - network 1.1.1.1 0.0.0.0
-        - network 192.168.2.0 0.0.0.255
+        - network 172.31.12.0 0.0.0.255
       parents: router eigrp 1
       save_when: modified
